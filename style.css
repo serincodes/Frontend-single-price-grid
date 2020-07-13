@@ -11,16 +11,21 @@
     body {
         font-family: 'Karla', sans-serif;
         background-color: hsl(204, 43%, 93%);
+        display: grid;
+        grid-template-rows: 100vh;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
     }
     
     .wrapper {
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(3 1Sfr);
+        grid-template-rows: repeat(3 1fr);
         width: 85%;
-        margin: 2rem auto;
+        margin:auto;
         box-shadow: 2px 5px 10px 1px rgba(0, 0, 0, 0.2);
-        border-radius: 5px;
+        border-radius: 15px;
     }
     
     p {
@@ -32,6 +37,7 @@
     .why-us {
         padding: 2rem;
     }
+
     /* Top section
 ********************/
     
@@ -51,13 +57,15 @@
     .header {
         background-color: white;
         grid-row: 1 /span 1;
-        border-radius: 5px;
+        border-radius: 10px 10px 0 0;
+        color: hsl(218, 22%, 67%);
     }
     
     .header p {
-        color: hsl(218, 22%, 67%);
         margin-top: 0.5rem;
+        max-width: 180ch;
     }
+
     /* Monthly subscription section
 ********************/
     
@@ -66,6 +74,30 @@
         margin-bottom: 1rem;
     }
     
+    .subscription {
+        background-color: hsl(179, 62%, 38%);
+        color: white;
+        grid-row: 2/span 1;
+    }
+    
+    .cost-line {
+        margin: 1rem 0 0.5rem;
+        line-height: 1;
+    }
+    
+    .dollars {
+        font-size: 2rem;
+        font-weight: 700;
+        padding-right: 0.5rem;
+        color: white;
+    }
+    
+    .per-month {
+        font-size: 0.875em;
+        color: hsl(204, 43%, 93%, 0.8);
+        vertical-align: super;
+    }
+
     .sign-up {
         display: block;
         width: 100%;
@@ -78,45 +110,33 @@
         padding: 1rem;
         text-align: center;
         box-shadow: 2px 5px 10px 1px rgba(0, 0, 0, 0.2);
+        transition: transform .3s;
     }
-    
-    .dollars {
-        font-size: 2rem;
-        font-weight: 700;
-        padding-right: 0.5rem;
-        color: white;
+
+    .sign-up:hover {
+        transform: scale(1.1);
     }
-    
-    .per-month {
-        font-size: 1rem;
-    }
-    
-    .subscription {
-        background-color: hsl(179, 62%, 38%);
-        color: hsl(204, 43%, 93%);
-        grid-row: 2/span 1;
-    }
-    
-    .cost-line {
-        margin: 1rem 0 0.5rem;
-        line-height: 1;
-    }
+
     /* Why us section
 ********************/
     
     .why-us {
         background-color: hsl(179, 62%, 43%);
-        color: hsl(204, 43%, 93%);
+        color: white;
         grid-row: 3 / span 1;
-        border-radius: 0 0 5px 5px;
+        border-radius: 0 0 10px 10px;
     }
     
     li {
         list-style-type: none;
-        line-height: 1.5rem;
+        line-height: 1.5em;
+        font-size: 0.875em;
+        color: hsl(204, 43%, 93%, 0.9)
     }
-    
-    footer {
+
+   /* Footer
+********************/ 
+    footer, .attribution a {
         color: hsl(218, 22%, 67%);
     }
     
@@ -124,7 +144,37 @@
         font-size: 11px;
         text-align: center;
     }
-    
-    .attribution a {
-        color: hsl(218, 22%, 67%);
+
+    /* Responsive - Desktop
+********************/
+
+@media screen and (min-width: 800px) {
+   .wrapper {
+       grid-template-columns: 1fr 1fr;
+       width: 60%;
+   }
+
+   .header,
+   .subscription,
+   .why-us {
+       padding: 2.5rem;
+   }
+
+   .header {
+        grid-row: 1 /span 1;
+        grid-column: 1 / span 2;
+        border-radius: 15px 15px 0 0;
+   }
+    .subscription {
+        grid-row: 2 / span 1;
+        grid-column: 1 / span 1;
+        border-radius: 0 0 0px 15px;
     }
+
+    .why-us {
+        grid-row: 2 / span 1;
+        grid-column: 2 / span 1;
+        border-radius: 0 0 15px 0;
+    }
+   
+}
