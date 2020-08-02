@@ -11,11 +11,12 @@
     body {
         font-family: 'Karla', sans-serif;
         background-color: hsl(204, 43%, 93%);
-        display: grid;
-        grid-template-rows: 100vh;
-        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
         align-items: center;
         min-height: 100vh;
+       
     }
     
     .wrapper {
